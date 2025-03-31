@@ -3,7 +3,7 @@ A simple C++ class to implement shared, mapped memory, intended for sharing data
 
 
 # Usage
-For an example, see smm.cpp.
+For an example, see smm.cpp.  The "SharedData" structure will be placed in the SimpleSharedMapMemory named "MySharedMem" and shared between two copies of the 'smm' process.
 
 To test, first build with 'make', and to test, 'make test'.  
 
