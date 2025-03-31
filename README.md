@@ -1,5 +1,5 @@
 # SimpleSharedMapMemory
-A simple C++ class to implement shared, mapped memory, intended for sharing data between two independent processes.
+A simple cross-platform (Windows/MacOS/Linux) C++ class to implement shared, mapped memory, intended for sharing data between two independent processes.
 
 
 # Usage
