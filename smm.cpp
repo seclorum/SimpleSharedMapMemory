@@ -1,3 +1,9 @@
+/*
+ * smm.cpp - test the SimpleSharedMapMemory class by creating a "/MySharedMem" memory
+ * map, and then reporting this current process' pid in a continuous loop.
+ * 
+ * Testing: See the 'make test' target of the Makefile.
+ */
 #include <string>
 #include <stdexcept>
 #include <cstdint>
@@ -19,12 +25,18 @@
 
 #include "SimpleSharedMapMemory.h"
 
-
+// This struct will be shared between processes.  It contains a simple list of
+// processes that share the "/MySharedMem" memory map.
 struct SharedData {
     int pid_count;
     int pids[100];
 };
 
+// A simple example - creates the "/MySharedMem" memory map if it doesn't exist
+// or re-uses it, if it already exists, populates an entry in the SharedData for
+// the current process (my_pid), and reports on the data structure in an 
+// infinite loop for test purposes.  Run two copies of this process to see
+// the results.
 int main() {
     try {
         const size_t REQUESTED_SIZE = sizeof(SharedData);
