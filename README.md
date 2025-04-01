@@ -1,6 +1,10 @@
 # SimpleSharedMapMemory
 A simple cross-platform (Windows/MacOS/Linux) C++ class to implement shared, mapped memory, intended for sharing data between two independent processes.
 
+Note: this is *not* a recommended way to do inter-process communication in the modern era - sandboxing and process isolation are real, and necessary.  However, for internal tooling in a controlled environment, sometimes you need a way for different applications to simply pass large data to each other, or share structures for testing purposes, and in that case a simple drop-in C++ class such as this can be very useful.
+
+Ship this?  No!   Use it to build out a suite of apps/plugins/processes for development purposes .. okay ..
+
 
 # Usage
 For an example, see smm.cpp.  The "SharedData" structure will be placed in the SimpleSharedMapMemory named "MySharedMem" and shared between two copies of the 'smm' process.
